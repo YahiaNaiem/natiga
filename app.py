@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 # Function to get student results by seating_no
 def get_student_results(seating_no):
-    conn = sqlite3.connect('F:/Results/students.db')  # Path to your SQLite database
+    conn = sqlite3.connect('F:/Results/site/students.db')  # Path to your SQLite database
     cursor = conn.cursor()
-    cursor.execute("SELECT arabic_name, total_degree, student_case, student_case_desc, c_flage FROM students WHERE seating_no=?", (seating_no,))
+    cursor.execute("SELECT arabic_name, total_degree, student_case, student_case_desc, c_flage, percentage FROM students WHERE seating_no=?", (seating_no,))
     results = cursor.fetchone()
     conn.close()
     return results
