@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Student Results</h1>
+    <div class="results">
+        {% if results %}
+            <p><strong>Arabic Name:</strong> {{ results[0] }}</p>
+            <p><strong>Total Degree:</strong> {{ results[1] }}</p>
+            <p><strong>Student Case:</strong> {{ results[2] }}</p>
+            <p><strong>Student Case Description:</strong> {{ results[3] }}</p>
+            <p><strong>Flag:</strong> {{ results[4] }}</p>
+        {% else %}
+            <p>No results found for the provided seating number.</p>
+        {% endif %}
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
